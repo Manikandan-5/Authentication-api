@@ -1,0 +1,27 @@
+.App {
+  background-image: linear-gradient(to right, #ffedb5, #ffb1f0);
+  height: 100vh;
+
+}
+
+.format {
+  margin: 10px;
+  padding: 20px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.format input {
+  border: 2px solid #9c28b1;
+}
+
+.pagesec {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+  gap: 20px;
+}
