@@ -28,7 +28,6 @@ const Register = (props) => {
         .required("this field required"),
     }),
     onSubmit: (data) => {
-      console.log(data);
       axios
         .post("http://localhost:5000/api/register", data)
         .then((res) => {
@@ -107,7 +106,7 @@ const Register = (props) => {
             <button className="btn btn-primary">
               <a
                 className="text-decoration-none  text-white"
-                href="#"
+                href="/login"
                 onClick={() => {
                   window.location.href = "register";
                 }}

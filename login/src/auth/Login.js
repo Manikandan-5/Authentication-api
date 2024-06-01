@@ -21,13 +21,12 @@ const Login = (props) => {
       password: yup.string().strict().trim().required("This field is required"),
     }),
     onSubmit: (data) => {
-      console.log(data);
       axios.post("http://localhost:5000/api/login",data)
       .then(res=>{
         localStorage.setItem('auth',JSON.stringify(res.data))
        props.history.push('/home')
       })
-      .catch((err)=>{toast.error(err.response.data)})
+      .catch((err)=>{toast.error(err.res.data)})
     },
   });
   return (
@@ -67,7 +66,7 @@ const Login = (props) => {
             </button>
 
             <a
-              href="#"
+              href="/register"
               onClick={() => {
                 window.location.href = "register";
               }}

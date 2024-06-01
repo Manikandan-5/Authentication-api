@@ -6,7 +6,8 @@ const jwt=require("jsonwebtoken")
 router.post("/register", async (req, res) => {
     try {
         var emailExist=await User.findOne( {email: req.body.email})
-        if(emailExist){
+        if(emailExist)
+        {
             return res.status(400).json("Email already Exist");
         }
         //Password hash

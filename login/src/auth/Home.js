@@ -10,7 +10,7 @@ export const Home = (props) => {
      setjson(res.data)
     })
     .catch(err=>{
-
+      console.log(err.message)
     })
 
   },[])
@@ -18,7 +18,7 @@ export const Home = (props) => {
 
   return (
     <div>
-        <h1>HOME</h1>
+        <h1>Welcome</h1>
         <p>{JSON.stringify(json)}</p>
         <button className="btn btn-primary" onClick={()=>{
           localStorage.clear();

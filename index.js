@@ -10,7 +10,7 @@ app.use(cors())
 
 app.use('/api',userRouter);
 
-
+ 
 const mongoose=require("mongoose")
 
 app.use("/",(req,res)=>{
