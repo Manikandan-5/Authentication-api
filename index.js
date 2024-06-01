@@ -24,7 +24,7 @@ app.listen(PORT,()=>{
     console.log("LocalHost Connected Successfully!!");
 })
 
-mongoose.connect(MONGO_DB).then(()=>{
+mongoose.connect(process.env.MONGO_DB).then(()=>{
     console.log("MongoDB Connected");
 }).catch((err)=>{
     console.log(err.stack);
