@@ -4,6 +4,7 @@ import * as yup from "yup";
 import axios from "axios";
 
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const Login = (props) => {
   const formik = useFormik({
@@ -26,7 +27,10 @@ const Login = (props) => {
         localStorage.setItem('auth',JSON.stringify(res.data))
        props.history.push('/home')
       })
-      .catch((err)=>{toast.error(err.res.data)})
+      .catch((err) => {
+        toast.error(err.response.data);
+      })
+      
     },
   });
   return (
@@ -61,19 +65,19 @@ const Login = (props) => {
             ) : null}
           </div>
           <div className="pagesec">
-            <button className="btn btn-success text-white" type="submit">
+            <button className="btn btn-success text-white" type="submit" >
               Submit
             </button>
 
-            <a
-              href="/register"
+            <Link
+              to="/register"
               onClick={() => {
                 window.location.href = "register";
               }}
             >
               <span>Don't have an account? </span>
               SignUp
-            </a>
+            </Link>
           </div>
         </form>
       </div>

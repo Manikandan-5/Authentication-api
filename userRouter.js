@@ -38,7 +38,7 @@ router.post("/login",async (req,res)=>{
             return res.status(400).json("Password not  Valid")
         }
 
-        var userToken= jwt.sign({email:userdata.email},"Valid Secret Key");
+        var userToken= await jwt.sign({email:userdata.email},process.env.userToken);
 
         res.header('auth',userToken).json(userToken)
 
